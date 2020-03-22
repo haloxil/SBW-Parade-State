@@ -1,0 +1,15 @@
+{% extends "main/layout.html" %}
+
+{% block title %}
+    Login
+{% endblock %}
+
+{% block content %}
+	<form method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+	If you don't already have an account, <a href="/register"><strong>register</strong></a> for one.
+{% endblock %}

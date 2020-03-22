@@ -1,0 +1,30 @@
+{% extends "main/layout.html" %}
+
+{% block title %}
+    Home
+{% endblock %}
+
+{% block content %}
+		
+	<form style="display: inline-block;" method="POST">
+		{% csrf_token %}
+		{{ form.as_p }}
+		<button type="submit" class="btn btn-primary">Submit</button>
+	</form>
+
+	
+	{% for person in persons %}
+		{% if person.date.date == person.date.date.today %}
+			<h4>Status of {{ person }} {{ person.user.get_full_name }} is {{ person.status }} on {{ person.date }}</h4>	
+			<br>
+		{% endif %}
+	{% endfor %}
+	<hr style="border: solid 10px;">
+	{% for person in persons %}
+		{% if person.date.date != person.date.date.today %}
+			<h4>Status of {{ person }} is {{ person.status }} on {{ person.date }}</h4>
+			<br>
+		{% endif %}
+	{% endfor %}
+
+{% endblock %}
