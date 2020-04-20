@@ -22,7 +22,7 @@
 	<hr style="border: solid 10px;">
 	{% for person in persons %}
 		{% if person.date.date != person.date.date.today %}
-			<h4>Status of {{ person }} is {{ person.status }} on {{ person.date }}</h4>
+			<h4>Status of {{ person }} {{ person.user.get_full_name }} is {{ person.status }} on {{ person.date }}</h4>
 			<br>
 		{% endif %}
 	{% endfor %}
