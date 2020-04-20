@@ -13,6 +13,7 @@ status_choice = (
 ("AO", "AO"),
 ("CSE", "CSE"),
 ("OOC", "OOC"),
+("WFH", "WFH")
 )
 
 rank_choice = (
